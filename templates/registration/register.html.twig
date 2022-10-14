@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block stylesheets %}  
+              <link rel="stylesheet" type="text/css" href="{{ asset('style_register.css') }}">
+{% endblock %}
+{% block body %}
+
+    <!--Block création de compte!-->
+<div class="main">
+        <div class="container">
+            <div class="sign-up-content">
+                {{ form_start(registrationForm) }}
+                    <h2 class="form-title"><strong>Créer un compte</h2>
+                        <div class="form-textbox">
+                            <label for="name">Nom</label>
+                            {{ form_row(registrationForm.name) }}
+                        </div>
+                        <div class="form-textbox">
+                            <label for="email">Email</label>
+                            {{ form_row(registrationForm.email) }}  
+                        </div>
+                            <div class="form-textbox">
+                                <label for="pass">Telephone</label>
+                                {{ form_row(registrationForm.telephone) }}
+                                </div>
+                                    <div class="form-textbox">
+                                        {{ form_row(registrationForm.password.first,{
+                                            label:'Mot de passe'
+                                        }
+                                        
+                                        ) }}
+                                    </div>
+                                        <div class="form-textbox">
+                                        
+                                            {{ form_row(registrationForm.password.second,{
+                                                label:'Confirmation'
+                                            }
+                                            
+                                            ) }}
+                                        </div>
+                    <!-- BLOCK VALIDATION !-->
+                         {{ form_row(registrationForm.agreeTerms) }}
+                        <input type="submit" name="submit" id="submit" class="submit" value="Create account" />
+                        {{ form_end(registrationForm) }}
+                        <p class="loginhere">Vous avez deja un compte ?<a href="{{ path('app_login') }}" class="loginhere-link"> Connect toi ici</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    <!--fin test!-->
+    
+{% endblock %}

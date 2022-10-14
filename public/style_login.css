@@ -1,0 +1,24 @@
+.bgbluebox{
+    background-image: url(https://cdn.shopify.com/s/files/1/0174/0580/4598/products/118470_KHAK_1_360x.jpg?v=1660841128);
+    padding: 100px;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    border-radius: 5px;
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  .gomuno_box{
+    height: auto!important;
+    padding-bottom: 15px;
+  }
+  /*box hover*/
+  .zoom {
+    transition: transform .3s;
+  }
+  .zoom:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
+  
