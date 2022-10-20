@@ -10,10 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
-class IndexController extends AbstractController
+class ArticleController extends AbstractController
 {
-    
-    #[Route('/index', name: 'app_index')]
+    #[Route('/articles', name: 'app_article')]
     public function show(Request $request, Environment $twig, ArticleRepository $articleRepository): Response
     {
 
@@ -27,5 +26,13 @@ class IndexController extends AbstractController
                     ]));                    
     }
 
+    
+    #[Route('/article/{id}', name: 'article')]
+    public function details(Environment $twig, Article $article): Response
+    {
+        return new Response($twig->render('single_products.html.twig', [
+            'article' => $article
+        ]));
+    }
     
 }
