@@ -30,7 +30,7 @@ class ArticleController extends AbstractController
     #[Route('/article/{id}', name: 'article')]
     public function details(Environment $twig, Article $article): Response
     {
-        return new Response($twig->render('single_products.html.twig', [
+        return new Response($twig->render('single_product.html.twig', [
             'article' => $article
         ]));
     }
