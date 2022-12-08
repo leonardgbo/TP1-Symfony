@@ -6,12 +6,13 @@
                                     <li><a href="{{ path('article',{id: article.id}) }}"><i class="fa fa-eye"></i></a></li>
                                 </ul>
                             </div>
-                            <img src="{{ asset('pull_col.jpg') }}" alt="">
+                            <img src="{{ asset('/image/'~(article.Image )) }}" alt="">
                         </div>
                         <div class="down-content">
                             <h4>{{article.nom}}</h4>
-                            <span>{{article.prix}}</span>
+                            <span>{{article.prix}}€</span>
                             <span>{{article.description}}</span>
                         </div>
                     </div>
                 </div>
+                

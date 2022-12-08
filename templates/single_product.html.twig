@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}OFF-BLACK{% endblock %}
 {% block body %}
 {% include 'header.html.twig'%}
 {% include 'header_product.html.twig'%}
@@ -8,20 +9,20 @@
             <div class="row">
                 <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="{{ asset('pull_col.jpg') }}" alt="">
-                      <img src="{{ asset('pull_col2.jpg') }}" alt="">
+                    <img src="{{ asset('/image/'~(article.Image )) }}" alt="">
+                      <img src="{{ asset('/image/'~(article.Image )) }}" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
                     <li><a href="{{ path('article',{id: article.id}) }}">
-                     <span>{{article.prix}}</span>
+                     <span>{{article.prix}}€</span>
 
                    <span>{{article.description}}</span>
 
                     <div class="quantity-content">
                         <div class="left-content">
-                            <h6>No. of Orders</h6>
+                            <h6>Nombre d'articles</h6>
                         </div>
                         <div class="right-content">
                             <div class="quantity buttons_added">
@@ -30,8 +31,8 @@
                         </div>
                     </div>
                     <div class="total">
-                        <h4>Total: <span>{{article.prix}}</span></h4>
-                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        <h4>Total :<span>{{article.prix}}€</span></h4>
+                        <div class="main-border-button"><a href="#">Ajouter au panier</a></div>
                     </div>
                 </div>
             </div>

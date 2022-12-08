@@ -23,14 +23,7 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email',EmailType::class)
             ->add('name')
-            ->add('telephone',TelType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez entrer un numéro de téléphone',
-                    ]),
-                ],
-            ])
+            ->add('telephone',TelType::class)
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [

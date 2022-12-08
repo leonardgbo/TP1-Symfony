@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[ApiResource]
 class Article
 {
     #[ORM\Id]
@@ -24,6 +27,9 @@ class Article
 
     #[ORM\Column(length: 255)]
     private ?string $Nom = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
     public function getId(): ?int
     {
@@ -74,6 +80,18 @@ class Article
     public function setNom(string $Nom): self
     {
         $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
