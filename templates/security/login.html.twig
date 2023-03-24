@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OFF-BLACK{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -9,15 +9,8 @@
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            Vous êtes connecté au compte {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}">Se deconnecter ici</a>
-        </div>
-    {% endif %}
-    <div class="bg-image home_background">
-            
-   <section class="vh-100 gradient-custom">
+         
+   <section class="vh-100 gradient-custom sizeform marginform">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -42,15 +35,15 @@
                 </div>
             
             <!--Oublie mdp!-->
-                <p class="small mb-5 pb-lg-2"><a class="text-white-50">
-                <a href="C:/Users/lgbotchenou/Symfony-AP1/app/templates/password.html" target="C:/Users/lgbotchenou/Symfony-AP1/app/templates/password.html">Mot de passe oublié ?</a></p>
+                <p class="small mb-5 pb-lg-2">
+                <a href="{{ asset('forget_password.html.twig') }}">Mot de passe oublié ?</a></p>
             
             <!--Connexion!-->
-                <input class="btn btn-outline-light btn-lg px-5" type="submit" value="Connexion">
+                <input class="btn btn-outline-light btn-lg px-5" type="submit" name="submit1" value="Connexion">
             
             <!--Inscription compte client!-->
               <div>
-                <p class="mb-0">Pas de compte client ? <a href="{{ path('app_register') }}" class="text-white-50 fw-bold">S'inscrire</a>
+                <p class="mb-0 text-white-50">Pas de compte client ? <a href="{{ path('app_register') }}" class="text-white-50 fw-bold">S'inscrire</a>
                 </p>
             <!--END!-->
                 </div>
@@ -59,7 +52,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 </form>
 {% endblock %}

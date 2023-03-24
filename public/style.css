@@ -1,8 +1,9 @@
-.home_background{
-  background-repeat: no-repeat;
-  background-image: url("https://cruisincity.com/wp-content/uploads/2019/06/Santa-Cruz-Skateboards-Screaming-hand.jpg");
-  background-position:center ;
-}  
 img:hover {
   opacity: 0.5;
+}
+.sizeform{
+  transform: scale(0.9); /* ajustez la valeur selon vos besoins */
+}
+.marginform{
+  margin-top: -30px;
 }
