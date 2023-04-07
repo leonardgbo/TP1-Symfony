@@ -27,5 +27,11 @@ class IndexController extends AbstractController
                     ]));                    
     }
 
+    #[Route('/about_us', name: 'about_us')]
+    public function aboutUs(Request $request, Environment $twig, ): Response
+    {
+        return new Response($twig->render('about_us.html.twig', []));  
+    }
+
     
 }

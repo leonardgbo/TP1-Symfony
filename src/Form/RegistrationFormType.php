@@ -45,27 +45,27 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit contenir au minimum {{ limit }} caractere',
+                        'minMessage' => 'Votre mot de passe doit contenir au minimum {{ limit }} caracteres',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
                     new Regex([
-                        'message' => 'Le mot de passe doit contenir minimum une majuscule',
+                        'message' => 'Le mot de passe doit contenir au minimum une majuscule',
                         'pattern' => '/[A-Z]/',
                         'match' =>true,
                     ]),
                     new Regex([
-                        'message' => 'Le mot de passe doit contenir minimum une minuscule',
+                        'message' => 'Le mot de passe doit contenir au minimum une minuscule',
                         'pattern' => '/[a-z]/',
                         'match' =>true,
                     ]),
                     new Regex([
-                        'message' => 'Le mot de passe doit contenir minimum un chiffre',
+                        'message' => 'Le mot de passe doit contenir au minimum un chiffre',
                         'pattern' => '/[\d]/',
                         'match' =>true,
                     ]),
                     new Regex([
-                        'message' => 'Le mot de passe doit contenir minimum un caractère spécial',
+                        'message' => 'Le mot de passe doit contenir au minimum un caractère spécial',
                         'pattern' => '/[!?#]/',
                         'match' =>true,
                     ])

@@ -34,5 +34,5 @@ class ArticleController extends AbstractController
             'article' => $article
         ]));
     }
-    
+
 }

@@ -3,6 +3,7 @@
 {% block body %}
 {% include 'header.html.twig'%}
 {% include 'header_product.html.twig'%}
+{# {% include 'preloader.html.twig'%} #}
     <!-- ***** Product Area Starts ***** -->
     <section class="section" id="product">
         <div class="container">
@@ -10,7 +11,7 @@
                 <div class="col-lg-8">
                 <div class="left-images">
                     <img src="{{ asset('/image/'~(article.Image )) }}" alt="">
-                      <img src="{{ asset('/image/'~(article.Image )) }}" alt="">
+                      <img src="{{ asset('/image/'~(article.Image2 )) }}" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
