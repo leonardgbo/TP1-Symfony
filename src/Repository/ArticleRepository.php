@@ -22,14 +22,27 @@ class ArticleRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Article::class);
     }
-    public function getArticlePaginator(int $offset): Paginator
+    public function getArticlePaginator(int $offset, $type=''): Paginator
         {
-            $query = $this->createQueryBuilder('c')
+            if (empty($type)){
+                $query = $this->createQueryBuilder('c')
                 //->orderBy('c.createdAt', 'DESC')
                 ->setMaxResults(self::PAGINATOR_PER_PAGE)
                 ->setFirstResult($offset)
                 ->getQuery()
             ;
+
+            }
+            else {
+                if ($type=="femme"){
+                    $query = $this->createQueryBuilder('c')
+                //->orderBy('c.createdAt', 'DESC')
+                ->setMaxResults(self::PAGINATOR_PER_PAGE)
+                ->setFirstResult($offset)
+                ->getQuery()
+                }
+            }
+            
     
             return new Paginator($query);
         }

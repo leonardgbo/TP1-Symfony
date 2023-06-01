@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Articlefemme;
 use App\Repository\ArticleRepository;
+use App\Repository\ArticlefemmeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +15,7 @@ use Twig\Environment;
 class IndexController extends AbstractController
 {
     
-    #[Route('/index', name: 'app_index')]
+    #[Route('/', name: 'app_index')]
     public function show(Request $request, Environment $twig, ArticleRepository $articleRepository): Response
     {
 
@@ -33,5 +35,18 @@ class IndexController extends AbstractController
         return new Response($twig->render('about_us.html.twig', []));  
     }
 
-    
+    // #[Route('/femme', name: 'femme')]
+    // public function show(Request $request, Environment $twig, ArticleRepository $articleRepository): Response
+    // {
+
+    //     $offset = max(0, $request->query->getInt('offset', 0));
+    //     $paginator = $articleRepository->getArticlePaginator($offset,'femme');
+
+    //     return new Response($twig->render('index_femme.html.twig', [
+    //                     'article_femmes' => $paginator,
+    //         'previous' => $offset - articleRepository::PAGINATOR_PER_PAGE,
+    //         'next' => min(count($paginator), $offset + articleRepository::PAGINATOR_PER_PAGE),
+    //                 ]));                    
+    // }
+
 }
